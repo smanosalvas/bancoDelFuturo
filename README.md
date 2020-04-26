@@ -1,11 +1,11 @@
-#Practica FrontMentor
+# Practica FrontMentor
 - https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN
 
-#BANCO DEL FUTURO
+# BANCO DEL FUTURO
 
-Es un banco ficticio para la nueva era digital. Hecho con mucho esfuerzo y <i>&hearts;</i>
+  -Es un banco ficticio para la nueva era digital. Hecho con mucho esfuerzo y <i>&hearts;</i>
 
-#Contribuciones
+# Contribuciones
 
-Por favor sientete libre de descargar, clonar, hacer un fork y revisar o aportar.
+  -Por favor sientete libre de descargar, clonar, hacer un fork y revisar o aportar.
 
