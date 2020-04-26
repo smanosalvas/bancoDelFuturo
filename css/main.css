@@ -562,6 +562,10 @@ p{
         grid-template-columns: 1fr 1fr;
     }
 
+    .presentation__bg{
+        height: 600px;
+    }
+
     .presentation_detail{
         padding: 0 120px;
     }
