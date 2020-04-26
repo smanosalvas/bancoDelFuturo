@@ -10,6 +10,7 @@ body{
 
 :root{
     --dark-blue: hsl(233, 26%, 24%);
+    --dark-blue-acent: hsl(130, 69%, 17%);
     --dark-lime-green: hsl(136, 65%, 51%);
     --dark-bright-cyan: hsl(192, 70%, 51%);
     --neutral-white: hsl(0, 0%, 100%);
@@ -53,6 +54,11 @@ p{
     text-align: center;
     z-index: 100;
     opacity: 0;
+}
+
+.header__menu a:hover{
+    color: var(--dark-blue-acent);
+    font-weight: 600;
 }
 
 .showMenu{
@@ -178,7 +184,13 @@ p{
     width: 100%;
     height: inherit;
     z-index: 1;
+    opacity: 0;
+    animation-name: presentationPlanesIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
+
+
 
 .presentation__second-plane{
     position: absolute;
@@ -189,11 +201,40 @@ p{
     width: 100%;
     height: inherit;
     z-index: 2;
+    animation-name: presentationPlanesIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: .5s;
+}
+
+@keyframes presentationPlanesIn {
+    0%{
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .presentation_detail{
     text-align: center;
     padding: 10px;
+    animation-name: presentationIn;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes presentationIn {
+    0%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }
 
 .presentation_detail h1{
@@ -220,8 +261,26 @@ p{
     letter-spacing: .5px;
     border: none;
     border-radius: 150px;
+    cursor: pointer;
 }
 
+.btn-primary:hover{
+    animation-name: hoverBtn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    will-change: scale;
+}
+
+@keyframes hoverBtn{
+    0%{
+        background: linear-gradient(to right, var(--dark-lime-green) 0%, var(--dark-bright-cyan) 100%);
+        transform: scale(1);
+    }
+    100%{
+        background: linear-gradient(to right, var(--dark-bright-cyan) 0%, var(--dark-lime-green) 100%);
+        transform: scale(1.05);
+    }
+}
 
 .main__details{
     display: grid;
@@ -247,7 +306,7 @@ p{
 }
 
 .lastest_articles{
-    padding: 50px 15px;
+    padding: 50px 35px;
     padding-bottom: 50px;
 }
 
@@ -401,6 +460,11 @@ p{
         grid-template-columns: 1fr 1fr;
     }
 
+    .lastest_articles{
+        padding: 50px 15px;
+        padding-bottom: 50px;
+    }
+
     .articles_container{
         display: grid;
         max-width: 80%;
@@ -500,12 +564,35 @@ p{
 
     .presentation_detail{
         padding: 0 120px;
-        
+    }
+
+
+    .presentation__first-plane{
+        animation-name: presentationPlanesIn;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        opacity: 0;
     }
 
     .presentation__second-plane{
         background-position: bottom;
         height: 120%;
+        animation-name: presentationPlanesIn;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-delay: .5s;
+        opacity: 0;
+    }
+
+    @keyframes presentationPlanesIn {
+        0%{
+            transform: translateX(500px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 
     .main__details{
@@ -539,10 +626,11 @@ p{
     .articles_container{
         grid-template-columns: 1fr 1fr 1fr;
         max-width: 100%;
+        justify-content: center;
     }
     
     .article{
-        max-width: 235px;
+        max-width: 300px;
     }
 
     .social__medias-container{
